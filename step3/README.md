@@ -1,6 +1,8 @@
 # step3
 
 Mostly from:
+- https://onsen.io/blog/react-webpack-hot-loader-onsenui/
+- http://survivejs.com/webpack/advanced-techniques/configuring-react/
 - https://www.codementor.io/tamizhvendan/tutorials/beginner-guide-setup-reactjs-environment-npm-babel-6-webpack-du107r9zr
 - https://blog.david-reid.com/2016/02/04/starting-with-react-webpack/
 - https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement
@@ -17,15 +19,11 @@ npm install webpack --save-dev
 
 ## install
 The babel-preset-es2015 and babel-preset-react are plugins being used by the babel-loader to translate ES6 and JSX syntax respectively.
-npm install --save-dev babel
-npm install --save-dev babel-core
-npm install --save-dev babel-loader
-npm install --save-dev babel-preset-react
-npm install --save-dev babel-preset-es2015
+npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-0 react-hot-loader@3.0.0-beta.1
 
-Html loader
-npm i html-loader --save-dev
+Babel can’t support all of ES6 with compilation alone — it also requires some runtime support. In particular, the new ES6 built-ins like Set, Map and Promise must be polyfilled, and Babel’s generator implementation also uses a number of runtime helpers. Given your app doesn’t have to share a JavaScript environment with other apps, you’ll be ok to use babel-polyfill to handle this:
 
+npm install babel-polyfill --save
 
 ## create a `.babel.rc`:
 ```
@@ -42,7 +40,9 @@ npm install webpack-dev-server --global
 npm install webpack-dev-server --save-dev
 
 ## Hot module replacement:
-npm install react-hot-loader --save-dev
+
+In Console you will see:
+[WDS] Hot Module Replacement enabled.
 
 To run it:
 

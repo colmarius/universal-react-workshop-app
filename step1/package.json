@@ -1,0 +1,22 @@
+{
+  "name": "universal-react-workshop-app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Marco Piraccini",
+    "email": "marco.piraccini@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcopiraccini/universal-react-workshop-app"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "eslint": "3.9.1",
+    "eslint-config-standard": "6.2.1",
+    "eslint-config-standard-react": "4.2.0",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-react": "6.5.0",
+    "eslint-plugin-standard": "2.0.1"
+  }
+}

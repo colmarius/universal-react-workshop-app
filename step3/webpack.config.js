@@ -1,41 +1,27 @@
-/* eslint-disable */
-
-// See: https://webpack.github.io/docs/configuration.html
-const webpack = require('webpack')
 const path = require('path')
 
-const js = /\.js$/
-const jsx = /\.jsx$/
-const json = /\.json$/
-const node_modules = /node_modules/
-
 module.exports = {
-  context: __dirname,
-  entry: {
-    app: ['./client/app.js']
-  },
+  entry: "./client/index.js",
   output: {
-    path: './build',
-    publicPath: '/public/',
-    filename: 'bundle.js'
+    path: './build', // target dir
+    filename: "bundle.js",
+    publicPath: "/static/" // path in URL
   },
+
   module: {
-//    preLoaders: [
-//      {test: [js, jsx], loader: 'eslint', exclude: node_modules}
-//    ],
-    loaders: [
-      {test: js, loader: 'babel', exclude: node_modules},
-      {test: jsx, loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=stage-0,presets[]=react'], exclude: node_modules}
-    ]
+    loaders: [{
+      test: /(\.js|\.jsx)$/,
+      exclude: /node_modules/,
+      loader: "babel",
+      include: __dirname,
+      query: {
+        presets: [ "es2015", "react", "react-hmre" ]
+      }
+    }]
   },
+
   resolve: {
     root: [path.resolve(__dirname, 'client')],
     extensions: ['', '.jsx', '.js']
-  },
-
-  devtool: 'source-map',
-  devServer: {
-    port: 4000,
-    historyApiFallback: true
   }
 }

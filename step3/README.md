@@ -41,9 +41,9 @@ npm install webpack-dev-server --save-dev
 
 ## Hot module replacement:
 
+http://gaearon.github.io/react-hot-loader/getstarted/
 In Console you will see:
 [WDS] Hot Module Replacement enabled.
 
 To run it:
-
-`webpack-dev-server --hot --inline`
+`webpack-dev-server --progress

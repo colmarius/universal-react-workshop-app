@@ -1,13 +1,13 @@
-import React from 'react'
+var React = require('react')
 
 const Example = React.createClass({
     render: function() {
         return (
-          <div className = 'hello' >
-            Hello Codemotion! 14
+          <div className = 'hello' >ere
+            Hello Codemotion!sr
           </div>
-        )
-    }
-})
+        );
+    },
+});
 
 export default Example

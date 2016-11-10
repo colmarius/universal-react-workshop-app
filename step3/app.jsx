@@ -1,7 +1,8 @@
-import {render} from 'react-dom'
+import React from 'react' // SX is transformed into React.createElement() calls, thus React is required in scope.
+import ReactDOM from 'react-dom'
 import Example from './example'
 
-render(
+ReactDOM.render(
   <Example />,
   document.getElementById('content')
-  )
+);

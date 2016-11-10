@@ -11,11 +11,11 @@
     "url": "https://github.com/marcopiraccini/universal-react-workshop-app"
   },
   "scripts": {
+    "lint": "eslint --ext .jsx,.js",
     "clean": "rimraf build",
     "build:bundle": "webpack -p",
     "build": "npm run clean && npm run build:bundle",
-    "lint": "eslint --ext .jsx,.js .",
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --progress"
   },
   "devDependencies": {
     "babel": "^6.5.2",

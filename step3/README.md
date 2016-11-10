@@ -1,5 +1,7 @@
 # step3
 
+Interesting: https://github.com/gaearon/react-hot-boilerplate
+
 Mostly from:
 - https://onsen.io/blog/react-webpack-hot-loader-onsenui/
 - http://survivejs.com/webpack/advanced-techniques/configuring-react/

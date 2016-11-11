@@ -1,10 +1,11 @@
-# step1
+# Step 1
 
-Project Setup.
+Project Setup. Run server and basic structure.
+It's a very simple step, mostly used to check that all is OK.
 
+## Usage
 
+- Setup: `npm i`
+- Start: `npm start`
 
-'app gira sulla 3000 ma serve i file statici, sulla 4000 ci si mette in mezzo webpack che ti manda indietro quelli generati al volo mentre sviluppi
-
-[11:36]  
-funzionerebbero entrambe ma evidentemente auth0 non è configurato per supportare la 3000 come url di callback
+Open the browser on http://127.0.0.1:3000/

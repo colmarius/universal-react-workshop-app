@@ -1,4 +1,4 @@
-# step2
+# Step 2
 
 First component.
 

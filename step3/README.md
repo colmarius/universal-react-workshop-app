@@ -1,4 +1,4 @@
-# step3
+# Step 3
 
 Theory: http://kevhuang.com/using-react-with-webpack-hot-module-replacement-middleware/
 Interesting: https://github.com/gaearon/react-hot-boilerplate

@@ -1,5 +1,7 @@
 # step1
 
+Project Setup.
+
 
 
 'app gira sulla 3000 ma serve i file statici, sulla 4000 ci si mette in mezzo webpack che ti manda indietro quelli generati al volo mentre sviluppi

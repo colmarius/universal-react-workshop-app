@@ -2,4 +2,6 @@
 
 First component.
 
-npm install react --save
+To arrive here:
+
+`npm install react react-dom --save`

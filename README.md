@@ -24,10 +24,10 @@ Every step has is own `README.md`
 - **5)** HAPI backend. Loading the list and the details from 2 HTTP endpoints.
 - **6)** Server Side Rendering. Loading the state from the server side. Isomorphic renering
 - **7)** Redux and state management
-- **8)** Test
 
-##
+## TODO
 
-TODO:
+  - Add Bootstrap
+  - Add step 4/5/6/7
   - Add ESLint + JSX plugin
   - Verify what's committed (e.g. step3/buil/build.js)

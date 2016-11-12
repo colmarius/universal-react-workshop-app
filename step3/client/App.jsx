@@ -1,36 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from "react" // ES6 import
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-  }
+const App = React.createClass({
+    render: function() {
+        return (
+          <div>
+            Hello Workshop!
+          </div>
+        )
+    },
+})
 
-  componentDidMount() {
-    this.interval = setInterval(
-      this.increment.bind(this),
-      1000
-    )
-  }
-
-  increment() {
-    this.setState(({ counter }) => {
-      return {counter: counter + 1};
-    });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
-
-  render() {
-    const { counter } = this.state;
-
-    return (
-      <header>
-        <div>Webpack is  its marco with ssssssssss and ES2015</div>
-        <div>{counter}</div>
-      </header>
-    );
-  }
-}
+export default App

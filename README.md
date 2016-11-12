@@ -25,3 +25,9 @@ Every step has is own `README.md`
 - **6)** Server Side Rendering. Loading the state from the server side. Isomorphic renering
 - **7)** Redux and state management
 - **8)** Test
+
+##
+
+TODO:
+  - Add ESLint + JSX plugin
+  - Verify what's committed (e.g. step3/buil/build.js)

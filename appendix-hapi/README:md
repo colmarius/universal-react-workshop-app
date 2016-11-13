@@ -1,0 +1,4 @@
+# install
+
+`npm i hapi --save`
+`npm start`

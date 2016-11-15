@@ -22,12 +22,17 @@ Every step has is own `README.md`
 - **3)** Webpack setup
 - **4)** State and routing. List with Details + Routing
 - **5)** HAPI backend. Loading the list and the details from 2 HTTP endpoints.
-- **6)** Server Side Rendering. Loading the state from the server side. Isomorphic renering
+- **6)** Server Side Rendering. Loading the state from the server side. Isomorphic rendering
 - **7)** Redux and state management
 
 ## TODO
 
-  - Add Bootstrap
+  - PARTIRE DA: https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89#.q9lv29rgv
+    OVVERO: https://github.com/justinjung04/universal-boilerplate
+
+  - Add Bootstrap e CSS in SSR
   - Add step 4/5/6/7
   - Add ESLint + JSX plugin
   - Verify what's committed (e.g. step3/buil/build.js)
+  - Aggiungere step in branch separati? Come in: https://github.com/dimaip/server-side-rendering
+    (questo permette di verifice le diff, ma è più complesso)

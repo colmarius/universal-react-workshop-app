@@ -1,13 +1,14 @@
 # Step 2
 
 ## Description
-First React Component.
+First React Component
 We create an `app.js` entry point and a `App.jsx` which simply
-displays `Hello Workshop!`
+displays `Hello Workshop!`.
+We put all the stuff in `client` folder
 
 ## How-to
 - `npm install react react-dom --save`
-- Create `app.js`:
+- Create `client/app.js`:
 
 ``` javascript
 ReactDOM.render(
@@ -16,7 +17,7 @@ ReactDOM.render(
 )
 ```
 
-- Create `App.jsx`:
+- Create `client/App.jsx`:
 
 ``` javascript
 const App = React.createClass({
@@ -31,7 +32,7 @@ const App = React.createClass({
 window.App = App // Necessary when not using a bundler
 ```
 
-- Add to HTML ('head'):
+- Add to HTML (in `<head>`):
 
 ``` javascript
 
@@ -42,13 +43,10 @@ window.App = App // Necessary when not using a bundler
 
 ```
 
-- Add to HTML (`body`):
+- Add to HTML (in `<body>`):
 
 ``` javascript
-
-<!-- My JS and JSX. Not using a bundle manager,
-     we have to a add all to global -->
-<script type="text/babel" src="./App.jsx"></script>
-<script type="text/babel" src="./app.js"></script>
+<script type="text/babel" src="./client/App.jsx"></script>
+<script type="text/babel" src="./client/app.js"></script>
 
 ```

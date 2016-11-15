@@ -9,7 +9,7 @@ It's a very simple step, mostly used to check that all is OK.
 - Simply clone, check `package,json` and install
 - To build all from scratch:
   - `npm i http-server --save-dev`
-  - Add `"start": "http-server . -p 3000"` to npm scripts
+  - Add `"start": "http-server . -p 4000"` to npm scripts
   - Add any index.html, e.g.:
 
 ``` html
@@ -29,4 +29,4 @@ It's a very simple step, mostly used to check that all is OK.
 - Setup: `npm i`
 - Start: `npm start`
 
-Open the browser on http://127.0.0.1:3000/
+Open the browser on http://127.0.0.1:4000/

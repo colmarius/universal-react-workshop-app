@@ -2,14 +2,14 @@
 
 ## Description
 First React Component
-We create an `app.js` entry point and a `App.jsx` which simply
+We create an `index.js` entry point and a `App.jsx` which simply
 displays `Hello Workshop!`.
 We put all the stuff in `client` folder
 
 ## How-to
 - `npm install react react-dom --save`
-- Create `client/app.js`:
 
+- Create `client/index.js`:
 ``` javascript
 ReactDOM.render(
   <App />,
@@ -18,7 +18,6 @@ ReactDOM.render(
 ```
 
 - Create `client/App.jsx`:
-
 ``` javascript
 const App = React.createClass({
     render: function() {
@@ -47,6 +46,12 @@ window.App = App // Necessary when not using a bundler
 
 ``` javascript
 <script type="text/babel" src="./client/App.jsx"></script>
-<script type="text/babel" src="./client/app.js"></script>
+<script type="text/babel" src="./client/index.js"></script>
 
 ```
+
+## Usage
+- Setup: `npm i`
+- Start: `npm start`
+
+Open the browser on http://127.0.0.1:4000/

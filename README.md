@@ -17,7 +17,7 @@ Every step has is own `README.md`
 
 ## Steps
 
-- **1)** Project Setup. Run server and basic structure.
+- **1)** Project Setup. Run server and basic structure
 - **2)** First React component. Hello Workshop!
 - **3)** Webpack setup
 - **4)** State and routing. List with Details + Routing

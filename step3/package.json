@@ -11,7 +11,7 @@
     "url": "https://github.com/marcopiraccini/universal-react-workshop-app"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot",
+    "start": "webpack-dev-server --progress --inline --hot --port 4000",
     "build": "npm run clean && npm run build:bundle",
     "clean": "rimraf build",
     "build:bundle": "webpack -p"

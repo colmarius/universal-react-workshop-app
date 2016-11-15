@@ -11,7 +11,7 @@
     "url": "https://github.com/marcopiraccini/universal-react-workshop-app"
   },
   "scripts": {
-    "start": "http-server . -p 3000"
+    "start": "http-server . -p 4000"
   },
   "dependencies": {
     "react": "^15.3.2",

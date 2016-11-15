@@ -1,44 +1,117 @@
 # Step 3
 
-Theory: http://kevhuang.com/using-react-with-webpack-hot-module-replacement-middleware/
-Interesting: https://github.com/gaearon/react-hot-boilerplate
+## Description
+We want to add `webpack` to our project with HMR features.
+To do that, we have to:
+- Add webpack config
+- Adapt react components to use ES6 modules
+- Sligtly change our `index.html`
+- Adapt npm scripts
 
-Mostly from:
-- https://onsen.io/blog/react-webpack-hot-loader-onsenui/
-- http://survivejs.com/webpack/advanced-techniques/configuring-react/
-- https://www.codementor.io/tamizhvendan/tutorials/beginner-guide-setup-reactjs-environment-npm-babel-6-webpack-du107r9zr
-- https://blog.david-reid.com/2016/02/04/starting-with-react-webpack/
-- https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement
-- http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
+## How-to
+- Install new dependencies:
+  - `npm install -g webpack webpack-dev-server`
+  - `npm install  webpack webpack-dev-server --save-dev`
+  - `npm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev`
+  - `npm install --save-dev babel-preset-react-hmre`
 
-## From previous:
-npm install react --save
-npm install react-dom --save
+- Check the dependencies added to `package.json`
+- Add npm scripts to `package.json`:
+``` json
+"scripts": {
+    "start": "webpack-dev-server --progress --inline --hot --port 4000",
+    "build": "npm run clean && npm run build:bundle",
+    "clean": "rimraf build",
+    "build:bundle": "webpack -p"
+}
+```
 
-## Install Webpack:
-npm install webpack --g
-npm install webpack --save-dev
+- Add `webpack.config.js`:
 
-##
-Webpack needs to copy this file over to our dist folder for us to use it which means we’ll need to modify our entry property in our webpack config and add an additional loader.
+``` javascript
+const path = require('path')
 
-## Install webpack-dev-server
-npm install webpack-dev-server --global
-npm install webpack-dev-server --save-dev
+module.exports = {
+  entry: "./client/index.js",
+  output: {
+    path: './build',       // target dir
+    filename: "bundle.js",
+    publicPath: "/static/" // path in URL
+  },
 
-## Hot module replacement:
+  module: {
+    loaders: [{
+      test: /(\.js|\.jsx)$/,
+      exclude: /node_modules/,
+      loader: "babel",
+      include: __dirname,
+      query: {
+        presets: [ "es2015", "react", "react-hmre" ]
+      }
+    }]
+  },
 
-http://gaearon.github.io/react-hot-loader/getstarted/
-In Console you will see:
-[WDS] Hot Module Replacement enabled.
+  resolve: {
+    root: [path.resolve(__dirname, 'client')],
+    extensions: ['', '.jsx', '.js']
+  }
+}
+```
 
-To run it:
-`webpack-dev-server --progress
+- Change `client/index.js` to use ES6 modules:
 
-## OLD
-The babel-preset-es2015 and babel-preset-react are plugins being used by the babel-loader to translate ES6 and JSX syntax respectively.
-npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-0 react-hot-loader@3.0.0-beta.1
+``` javascript
+import {render} from "react-dom"
+import React from "react"
+import App from "App"
 
-Babel can’t support all of ES6 with compilation alone — it also requires some runtime support. In particular, the new ES6 built-ins like Set, Map and Promise must be polyfilled, and Babel’s generator implementation also uses a number of runtime helpers. Given your app doesn’t have to share a JavaScript environment with other apps, you’ll be ok to use babel-polyfill to handle this:
+const containerEl = document.getElementById("container")
 
-npm install babel-polyfill --save
+render(
+  <App/>,
+  containerEl
+)
+
+```
+
+- Change `client/App.jsx`  to use ES6 modules:
+
+``` javascript
+import React from "react" // ES6 import
+
+const App = React.createClass({
+    render: function() {
+        return (
+          <div>
+            Hello Workshop!
+          </div>
+        )
+    },
+})
+```
+
+- Change `index.html` to *import only the bundle*:
+``` html
+<html>
+  <head>
+    <title>React HMR example</title>
+  </head>
+  <body>
+    <h1>Hello Workshop!</h1>
+    <div id="container"></div>
+    <script src="/static/bundle.js"></script>
+  </body>
+</html>
+```
+## Usage
+- Setup: `npm i`
+- Start: `npm start`
+- Open the browser on http://127.0.0.1:4000/
+- Check in the browser console the log `[WDS] Hot Module Replacement enabled.`
+- Change `App.jsx` and see the module reloaded automatically.
+
+## Notes
+- `npm start` executes `webpack-dev-server` which creates a webpack bundle
+in memory.
+- To create a bundle on file system (e.g. for production, use `npm run-script build:bundle`)
+- Also, since we installed webpack also globally, we can launch direcly `webpack -p`.

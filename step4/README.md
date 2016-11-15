@@ -1,52 +1,23 @@
 # Step 3
 
 ## Description
-Here we add a list of talks with a talk detail.
+Here we add a list of talks.
 To do that we need to:
 - Define TalkList, Talk, TalkDetail
-- Add a proper CSS
+- Add a proper CSS based on Bootstrap.
 - Add state
 
-In this step we lod th data from a json exposed directly as static resource.
+In this step we load the data from a json bundled in webpack
 
 ## How-to
 - Removed `App.jsx`
 - Created static `Talk.js`:
 ``` javascript
-import React from 'react'
-const Talk = React.createClass({
-  render: function () {
-    return (
-      <div className='item'>
-        <div className='talk'>
-          <div className='description'>
-            <p>Perfect React</p>
-            <p>by Marco Piraccini </p>
-            <p>learn perfect react</p>
-          </div>
-          <div>
-            <span>Number of votes: 0</span>
-          </div>
-        </div>
-    </div>
-  )}
-})
-export default Talk
+// TODO
 ```
 - Created static `TalkList.js`:
 ``` javascript
-import React from 'react'
-import Talk from 'Talk'
-const TalkList = React.createClass({
-  render: function () {
-    return (
-      <div className='talks'>
-        <Talk />
-      </div>
-    )
-  }
-})
-export default TalkList
+// TODO
 ```
 - ~~Changed index.js to render `TalkList.js`~~ -> not necessary with webpack
 - Try the App (we should see the "static" list)

@@ -1,10 +1,6 @@
 import {render} from "react-dom"
 import React from "react"
-import App from "App"
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import TalkList from "TalkList"
 
-const containerEl = document.getElementById("container")
-
-render(
-  <App/>,
-  containerEl
-)
+render(<TalkList/>, document.getElementById("container"))

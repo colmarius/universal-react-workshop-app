@@ -81,9 +81,13 @@ resources to be loaded.
       loader: 'url?limit=10000&mimetype=image/svg+xml'
   }
 ```
+- Add JSON data model: `data.json`
 
-- Adapt JSX to bootstrap (note that we ahve to use `className`)
-
+- Adapt JSX to bootstrap (note that we ahve to use `className`) [TODO]
+- Now, let's add webpack JSON Loader (to load the data):
+  -`npm install json-loader --save-dev`
+  - Add webpack loader:   `{ test: /\.json$/, loader: 'json' },`
+  - Add import to TalkList.jsx: `import data from 'data.json'`
 
 ## Usage
 TODO

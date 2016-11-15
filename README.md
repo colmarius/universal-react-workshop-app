@@ -20,7 +20,8 @@ Every step has is own `README.md`
 - **1)** Project Setup. Run server and basic structure
 - **2)** First React component. Hello Workshop!
 - **3)** Webpack setup
-- **4)** State and routing. List with Details + Routing
+- **4)** List. State
+- **4.1)** Routing. Detail.
 - **5)** HAPI backend. Loading the list and the details from 2 HTTP endpoints.
 - **6)** Server Side Rendering. Loading the state from the server side. Isomorphic rendering
 - **7)** Redux and state management

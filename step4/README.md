@@ -4,8 +4,8 @@
 Here we add a list of talks with a talk detail.
 To do that we need to:
 - Define TalkList, Talk, TalkDetail
-- Add Routing for details
 - Add a proper CSS
+- Add state
 
 In this step we lod th data from a json exposed directly as static resource.
 
@@ -81,6 +81,8 @@ resources to be loaded.
       loader: 'url?limit=10000&mimetype=image/svg+xml'
   }
 ```
+
+- Adapt JSX to bootstrap (note that we ahve to use `className`)
 
 
 ## Usage

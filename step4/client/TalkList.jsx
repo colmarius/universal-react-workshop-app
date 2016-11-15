@@ -4,9 +4,9 @@ import Talk from 'Talk'
 const TalkList = React.createClass({
   render: function () {
     return (
-      <div className='talks'>
-        <Talk />
-      </div>
+        <div className="list-group">
+          <Talk/>
+        </div>
     )
   }
 })

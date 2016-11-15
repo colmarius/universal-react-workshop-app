@@ -9,6 +9,8 @@ To do that, we have to:
 - Adapt npm scripts
 
 ## How-to
+- We can remove `lib` folder, not necessary anymore (webpack will take care of deps)
+- We can remove `http-server` from `package.json`/`devDependencies`
 - Install new dependencies:
   - `npm install -g webpack webpack-dev-server`
   - `npm install  webpack webpack-dev-server --save-dev`
@@ -16,7 +18,7 @@ To do that, we have to:
   - `npm install --save-dev babel-preset-react-hmre`
 
 - Check the dependencies added to `package.json`
-- Add npm scripts to `package.json`:
+- Add npm scripts to `package.json` (note that now the `start` script is changed):
 ``` json
 "scripts": {
     "start": "webpack-dev-server --progress --inline --hot --port 4000",

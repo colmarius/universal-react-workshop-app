@@ -32,7 +32,5 @@ Every step has is own `README.md`
 
   - Add Bootstrap e CSS in SSR
   - Add step 4/5/6/7
-  - Add ESLint + JSX plugin
-  - Verify what's committed (e.g. step3/buil/build.js)
   - Aggiungere step in branch separati? Come in: https://github.com/dimaip/server-side-rendering
     (questo permette di verifice le diff, ma è più complesso)

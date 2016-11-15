@@ -3,11 +3,8 @@
 ## Description
 Here we add a list of talks.
 To do that we need to:
-- Define TalkList, Talk, TalkDetail
+- Define static TalkList, Talk
 - Add a proper CSS based on Bootstrap.
-- Add state
-
-In this step we load the data from a json bundled in webpack
 
 ## How-to
 - Removed `App.jsx`
@@ -52,16 +49,12 @@ resources to be loaded.
       loader: 'url?limit=10000&mimetype=image/svg+xml'
   }
 ```
-- Add JSON data model: `data.json`
-
-- Adapt JSX to bootstrap (note that we ahve to use `className`) [TODO]
-- Now, let's add webpack JSON Loader (to load the data):
-  -`npm install json-loader --save-dev`
-  - Add webpack loader:   `{ test: /\.json$/, loader: 'json' },`
-  - Add import to TalkList.jsx: `import data from 'data.json'`
+- Adapt JSX to bootstrap (note that we have to use `className`):
+``` javascript
+// M[TODO]
+```
 
 ## Usage
-TODO
 
 ## Notes
 - Adding boostrap: https://medium.com/@victorleungtw/how-to-use-webpack-with-react-and-bootstrap-b94d33765970#.f1a3txjxu

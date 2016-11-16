@@ -1,4 +1,4 @@
-# Appendix Webpack
+# Webpack Quick Demo
 
 See how webpack works in a simpler project
 
@@ -8,4 +8,4 @@ See how webpack works in a simpler project
 - `npm init`
 - `npm i webpack --save-dev`
 
-TODO
+## TODO

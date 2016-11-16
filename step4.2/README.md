@@ -1,12 +1,24 @@
 # Step 3
 
 ## Description
-Add Routing to Talk details if we click on tlak title.
+Add Routing to Talk details if we click on talk title.
 
 ## How-to
-- TODO
+- Add react.router: `npm i react-router --save`
+- Add `TalkDetail`
 ```
-
-## Usage
+- Introduce `App.jsx` to be used as entry point (instead of direct `TalkList`). We add
+the list as /, the TalkDetail and the 404 components
+``` javascript
+// [TODO]
+```
+- Change index.js accordingly to use `App.jsx`
+``` javascript
+// (TODO)
+```
+- Change `Talk.jsx` with the link of the detail (note the `Link` expression):
+``` javascript
+// (TODO)
+```
 
 ## Notes

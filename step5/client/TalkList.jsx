@@ -27,6 +27,13 @@ const TalkList = React.createClass({
 
   render: function () {
 
+    // to check where rendering happens
+    let inBrowser = false
+    if (typeof window !== undefined) {
+      inBrowser = true
+    }
+    console.log('In Browser:', inBrowser)
+
     const talks = this.state.talks.map(talk => {
       return (
         <Talk

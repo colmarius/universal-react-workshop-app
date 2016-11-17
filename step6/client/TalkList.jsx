@@ -5,16 +5,31 @@ import axios from 'axios'
 const TalkList = React.createClass({
 
   getInitialState: function () {
-    return {
-      talks: [] // initial state
+    // We have to change the setup to support SSR.
+    // getInitialState is called on both server and client.
+    // If we have the same state, the component is not rendered.
+    // It's awfutl to use initialStte...but it works
+    if (typeof __PRELOADED_STATE__ !== 'undefined') {
+      // Client side
+      return {
+        talks:__PRELOADED_STATE__ // initial state
+      }
+    } else {
+      // Server side
+      return {
+        talks: this.props.initialState ? this.props.initialState.talks : []
+      }
     }
   },
 
+  // Not needed anymore...maitainied onlt for comparing
   componentDidMount: function () {
-    axios.get('/api/talks')
-      .then(res => {
-        this.setState({talks: res.data})
+    if (typeof __PRELOADED_STATE__ === 'undefined') {
+      axios.get('/api/talks')
+        .then(res => {
+          this.setState({talks: res.data})
       })
+    }
   },
 
   handleVote: function (talkId) {
@@ -26,7 +41,6 @@ const TalkList = React.createClass({
   },
 
   render: function () {
-
     const talks = this.state.talks.map(talk => {
       return (
         <Talk
@@ -40,11 +54,7 @@ const TalkList = React.createClass({
         ></Talk>
       )
     })
-    return (
-      <div className='talks'>
-        {talks}
-      </div>
-    )
+    return (<div>{talks}</div>)
   }
 })
 

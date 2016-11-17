@@ -3,11 +3,13 @@ const talks = require('./data')
 const pages = require('./pages')
 
 import React from 'react'
-import {renderToString} from 'react-dom/server'
-import App from '../client/App'
+import {renderToString, renderToStaticMarkup} from 'react-dom/server'
+import TalkList from '../client/TalkList'
 
 const server = new Hapi.Server()
 server.connection({port: 4001})
+
+const __CLIENT__ = false // for debugging
 
 server.route({
   method: 'GET',
@@ -38,11 +40,13 @@ server.route({
   }
 })
 
+// SSR!!!!
 server.route({
   method: 'GET',
-  path:'/api/talk-list',
+  path:'/ssr',
   handler: (request, reply) => {
-    reply(pages.index(renderToString(<App/>)))
+    console.log("renderToString(<TalkList initialState={{talks}}/>)", renderToString(<TalkList initialState={{talks}}/>))
+    reply(pages.index(renderToString(<TalkList initialState={{talks}}/>), talks))
   }
 })
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Talk from 'Talk'
-import data from 'data.json' // data model
+import Talk from './Talk.jsx'
+import data from './data.json' // data model
 
 const TalkList = React.createClass({
 

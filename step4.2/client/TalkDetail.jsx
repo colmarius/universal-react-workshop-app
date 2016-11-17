@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
 import {Link} from 'react-router'
-import data from 'data.json'
+import data from './data.json'
 
 const TalkDetail = React.createClass({
   getInitialState: function () {

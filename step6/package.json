@@ -12,7 +12,7 @@
   },
   "scripts": {
     "client:dev": "webpack-dev-server --progress --inline --hot --port 4000",
-    "server:dev": "node ./server",
+    "server:dev": "node ./server/start",
     "start": "concurrently -kr \"npm run client:dev\" \"npm run server:dev\"",
     "build": "npm run clean && npm run build:bundle",
     "clean": "rimraf build",
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "axios": "^0.15.2",
+    "babel-register": "^6.18.0",
     "bootstrap": "^3.3.7",
     "hapi": "^15.2.0",
     "react": "^15.0.1",

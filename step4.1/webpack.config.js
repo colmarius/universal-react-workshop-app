@@ -48,10 +48,5 @@ module.exports = {
       },
       { test: /\.json$/, loader: 'json' }
   ]
-  },
-
-  resolve: {
-    root: [path.resolve(__dirname, 'client')],
-    extensions: ['', '.jsx', '.js']
   }
 }

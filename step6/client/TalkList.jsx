@@ -1,11 +1,8 @@
 import React from 'react'
-import Talk from 'Talk'
+import Talk from './Talk.jsx'
 import axios from 'axios'
 
 const TalkList = React.createClass({
-  handleVote: function (talkId) {
-    console.log('Voting', talkId)
-  },
 
   getInitialState: function () {
     return {
@@ -21,11 +18,11 @@ const TalkList = React.createClass({
   },
 
   handleVote: function (talkId) {
-    // We "clone" the array. We have to treat this.state as if it were immutable.
-    const updatedTalks = this.state.talks.slice()
-    const votedTalk = updatedTalks.find(el => el.id === talkId)
-    votedTalk.votes++
-    this.setState({ talks: updatedTalks })
+    axios.post('/api/talk/vote', {id: talkId})
+      .then( () => axios.get('/api/talks'))
+      .then(res => {
+        this.setState({talks: res.data})
+      })
   },
 
   render: function () {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Router, Route, hashHistory} from 'react-router'
-import TalkList from 'TalkList'
-import TalkDetail from 'TalkDetail'
+import TalkList from './TalkList.jsx'
+import TalkDetail from './TalkDetail.jsx'
 
 const App = React.createClass({
   render() {

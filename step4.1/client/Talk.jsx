@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 const Talk = React.createClass({
   vote: function () {

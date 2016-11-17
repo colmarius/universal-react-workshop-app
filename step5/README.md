@@ -88,3 +88,4 @@ on port 4001 with browser:
 ``` javascript
 // (TODO)
 ```
+- Test it. Now reloading the browser, the state should remain.

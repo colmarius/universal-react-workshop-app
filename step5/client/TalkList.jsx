@@ -1,5 +1,5 @@
 import React from 'react'
-import Talk from 'Talk'
+import Talk from './Talk.jsx'
 import axios from 'axios'
 
 const TalkList = React.createClass({

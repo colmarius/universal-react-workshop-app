@@ -50,11 +50,6 @@ module.exports = {
   ]
   },
 
-  resolve: {
-    root: [path.resolve(__dirname, 'client')],
-    extensions: ['', '.jsx', '.js']
-  },
-
   devServer: {
     historyApiFallback: true, // Needed for React Routing
     proxy: {

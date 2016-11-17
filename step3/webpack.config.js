@@ -18,10 +18,6 @@ module.exports = {
         presets: [ "es2015", "react", "react-hmre" ]
       }
     }]
-  },
-
-  resolve: {
-    root: [path.resolve(__dirname, 'client')],
-    extensions: ['', '.jsx', '.js']
   }
+  
 }

@@ -12,7 +12,7 @@ Add HAPI server
 
 ``` javascript
   const Hapi = require('hapi')
-  const data = require('./data')
+  const talks = require('./data')
 
   const server = new Hapi.Server()
   server.connection({port: 4001})
@@ -21,7 +21,7 @@ Add HAPI server
     method: 'GET',
     path: '/api/talks',
     handler: (req, reply) => {
-      reply(data)
+      reply(talks)
     }
   })
 
@@ -30,14 +30,26 @@ Add HAPI server
     path: '/api/talk/{id}',
     handler: (req, reply) => {
       const id = Number(req.params.id)
-      const talk = data.find(el => el.id === id)
+      const talk = talks.find(el => el.id === id)
       reply(talk)
+    }
+  })
+
+  server.route({
+    method: 'POST',
+    path: '/api/talk/vote',
+    handler: (req, reply) => {
+      const id = req.payload.id
+      const talk = talks.find(el => el.id === id)
+      talk.votes++
+      reply(talks)
     }
   })
 
   server.start(function () {
       console.log(`Server running at port: ${server.info.port}`)
   })
+
 
 ```
 - Add `concurrently` as dev tool (to launch both `webpack-dev-server` and `HAPI` server in dev):
@@ -68,7 +80,7 @@ on port 4001 with browser:
     }
   }
 ```
-- Check that now the API enpoints are answerint also using 4000 port:
+- Check that now the API enpoints are answering also using 4000 port:
   - `http://127.0.0.1:4000/api/talks`
   - `http://127.0.0.1:4000/api/talk/id`
 - Add `axios`: `npm i axios --save`

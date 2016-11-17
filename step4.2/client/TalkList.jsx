@@ -3,9 +3,6 @@ import Talk from 'Talk'
 import data from 'data.json' // data model
 
 const TalkList = React.createClass({
-  handleVote: function (talkId) {
-    console.log('Voting', talkId)
-  },
 
   getInitialState: function () {
     return {
@@ -24,7 +21,7 @@ const TalkList = React.createClass({
     votedTalk.votes++
     this.setState({ talks: updatedTalks })
   },
-  
+
   render: function () {
 
     const talks = this.state.talks.map(talk => {

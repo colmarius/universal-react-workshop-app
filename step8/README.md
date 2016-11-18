@@ -37,6 +37,8 @@ No tests found
 ```
 - Add test to `__test__`. Jest expects to find our tests in a __tests__ folder
 
+- https://www.sitepoint.com/test-react-components-jest/
+-
 - TODO: complete!
 Note:
 - https://www.sitepoint.com/test-react-components-jest/

@@ -1,0 +1,112 @@
+exports[`test TalkList test 1`] = `
+<div>
+  <div
+    className="list-group-item">
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <h3
+        className="list-group-item-heading">
+        Perfect React
+      </h3>
+    </a>
+    <p
+      className="list-group-item-text">
+      learn perfect react
+    </p>
+    <h4
+      className="list-group-item-text">
+      by 
+      Marco Piraccini
+    </h4>
+    <h4
+      className="list-group-item-text">
+      Number of votes:  
+      <span
+        className="badge">
+        0
+      </span>
+       
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        Vote
+      </button>
+    </h4>
+  </div>
+  <div
+    className="list-group-item">
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <h3
+        className="list-group-item-heading">
+        Docker in Practice
+      </h3>
+    </a>
+    <p
+      className="list-group-item-text">
+      become a Docker master
+    </p>
+    <h4
+      className="list-group-item-text">
+      by 
+      Docker Master
+    </h4>
+    <h4
+      className="list-group-item-text">
+      Number of votes:  
+      <span
+        className="badge">
+        0
+      </span>
+       
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        Vote
+      </button>
+    </h4>
+  </div>
+  <div
+    className="list-group-item">
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <h3
+        className="list-group-item-heading">
+        Arduino Everywhere
+      </h3>
+    </a>
+    <p
+      className="list-group-item-text">
+      learn arduino
+    </p>
+    <h4
+      className="list-group-item-text">
+      by 
+      Archimede Pitagorico
+    </h4>
+    <h4
+      className="list-group-item-text">
+      Number of votes:  
+      <span
+        className="badge">
+        0
+      </span>
+       
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        Vote
+      </button>
+    </h4>
+  </div>
+</div>
+`;

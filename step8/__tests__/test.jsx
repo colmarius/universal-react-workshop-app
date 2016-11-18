@@ -16,5 +16,4 @@ test('TalkList test', () => {
   let talkList = component.toJSON();
   expect(component).toMatchSnapshot();
 
-  // talkList.handleVote(1)
 })

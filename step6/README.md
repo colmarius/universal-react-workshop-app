@@ -25,27 +25,25 @@ module.exports = require('.')
 ``` javascript
 // (TODO)
 ```
-
--  Testare con un browser non-js: lynx http://127.0.0.1:4000/ssr
-- Problema: SSR e bootstrap
-
-- TODO:
-  - Documentare il perchè del DIV aggiuntivo. Spiegare perchè serve il rendering.
-  - Evitare di usare le prop nell'inizializzazione (è OK passare per il global)
-  - Qui Spiegato il perchè: https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md
-  - Routing: NON SERVE! Noi mandiamo il componente renderizzato, poi React parte sul browser,
-e non ri-renderizza la lista perchè già renderizzata
-  - Proxy: manteniamo un endpoint separato (/ssr) per vedere la differenza.
+- Proxy: we use a separate endpoint (so we can check the difference):
 ``` javascript
 proxy: {
   '/api': 'http://localhost:4001',
   '/ssr': 'http://localhost:4001'
-}
+  }
 ```
+-  Testare con un browser non-js: lynx http://127.0.0.1:4000/ssr
+- CSS?
 
 ## NOTE:
-componentDidMount è chiamato solo sul client.
-getInitialState è chiamato sia sul client che sul server.
+- Documentare il perchè del DIV aggiuntivo. Spiegare perchè serve il rendering.
+- Evitare di usare le prop nell'inizializzazione (è OK passare per il global)
+- Qui Spiegato il perchè: https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md
+- Routing: NON SERVE! Noi mandiamo il componente renderizzato, poi React parte sul browser,
+e non ri-renderizza la lista perchè già renderizzata
+
+  componentDidMount è chiamato solo sul client.
+  getInitialState è chiamato sia sul client che sul server.
 
 Quindi:
 - Il server produce il contunto renderizzato.
@@ -55,7 +53,7 @@ Quindi:
   (potremmo pure evitare di usare le props)
 -
 
-# NOTES
+# FURTHER NOTES
 ## Lifecycle
 
   - componentWillMount is executed before rendering, on both server and client side.

@@ -6,7 +6,6 @@ exports.index = (renderedApp, preloadedState) => {
           <title>Universal React Workshop</title>
           <script>
             window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
-            console.log('${renderedApp}')
           </script>
         </head>
         <body>

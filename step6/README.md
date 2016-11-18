@@ -1,7 +1,10 @@
 # Step 6
 
 ## Description
-Add first page (list) SSR.
+Add first page (TalkList) SSR.
+Note that SSR it's only about rendering the first state page, then JS/react
+starts and then the state is restored. That's the reason we render
+TalkList
 
 ## How-to
 - Add babel hook: npm i babel-register --save

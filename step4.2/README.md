@@ -8,7 +8,8 @@ Add Routing to Talk details if we click on talk title.
 - Add `TalkDetail`
 ```
 - Introduce `App.jsx` to be used as entry point (instead of direct `TalkList`). We add
-the list as /, the TalkDetail and the 404 components
+the list as /, the TalkDetail and the 404 components.
+This sis only to setup routing. When doing SSR we skip this
 ``` javascript
 // [TODO]
 ```

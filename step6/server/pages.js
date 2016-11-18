@@ -3,10 +3,13 @@ exports.index = (renderedApp, preloadedState) => {
       `<!DOCTYPE html>
       <html>
         <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
           <title>Universal React Workshop</title>
           <script>
             window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
           </script>
+          <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
         </head>
         <body>
           <div class="jumbotron">

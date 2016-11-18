@@ -32,13 +32,14 @@ proxy: {
   '/ssr': 'http://localhost:4001'
   }
 ```
--  Testare con un browser non-js: lynx http://127.0.0.1:4000/ssr
-- CSS?
+-  Testare con un browser non-js:
+  - lynx http://127.0.0.1:4000/ssr
+  - curl http://127.0.0.1:4000/ssr >> test3.html
 
 ## NOTE:
 - Documentare il perchè del DIV aggiuntivo. Spiegare perchè serve il rendering.
 - Evitare di usare le prop nell'inizializzazione (è OK passare per il global)
-- Qui Spiegato il perchè: https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md
+- Qui spiegato il perchè: https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md
 - Routing: NON SERVE! Noi mandiamo il componente renderizzato, poi React parte sul browser,
 e non ri-renderizza la lista perchè già renderizzata
 
@@ -119,6 +120,9 @@ a React a rendere il codice dinamico.
 In realtà lui chiama "render", ma non ri-renderizza. Se il markup è identico, attacca l'istanza
 del componente al DOM. Se non coincide, allora il browser lo ri-renderizza..
 
+## CSS
+We don' use stripper, etc. Just added the bootsetrap CSS sot the SSR rendered page
+is OK.
 
 ## LINKS:
 - https://medium.com/@firasd/quick-start-tutorial-universal-react-with-server-side-rendering-76fe5363d6e#.q9vofe2od

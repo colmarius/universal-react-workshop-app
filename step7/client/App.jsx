@@ -1,33 +1,14 @@
 import React from 'react'
-import {Router, Route, hashHistory} from 'react-router'
+import {Router, Route, browserHistory} from 'react-router'
 import TalkList from './TalkList.jsx'
 import TalkDetail from './TalkDetail.jsx'
-import thunk from 'redux-thunk'
-import {connect} from 'react-redux'
-import {vote} from './actions'
-
-const mapStateToProps = (state) => {
-  return {
-    talks: state
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleVote: (id) => {
-      dispatch(vote(id))
-    }
-  }
-}
-
-// Connect Redux state to props and handlers
-const TalkListRedux = connect(mapStateToProps, mapDispatchToProps)(TalkList)
 
 const App = React.createClass({
   render() {
     return (
-      <Router history={hashHistory}>
-        <Route path='/' component={TalkListRedux} />
+      <Router history={browserHistory}>
+        <Route path='/' component={TalkList} />
+        <Route path='/ssr' component={TalkList} />
         <Route path='/detail/:id' component={TalkDetail} />
         <Route path='*' component={NotFound} />
       </Router>

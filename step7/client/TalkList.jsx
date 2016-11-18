@@ -1,7 +1,7 @@
 import React from 'react'
 import Talk from './Talk.jsx'
-import axios from 'axios'
-import {loadData} from './actions'
+import {connect} from 'react-redux'
+import {loadData, vote} from './actions'
 
 const TalkList = React.createClass({
 
@@ -24,4 +24,21 @@ const TalkList = React.createClass({
   }
 })
 
-export default TalkList
+const mapStateToProps = (state) => {
+  return {
+    talks: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleVote: (id) => {
+      dispatch(vote(id))
+    }
+  }
+}
+
+// Connect Redux state to props and handlers
+const TalkListRedux = connect(mapStateToProps, mapDispatchToProps)(TalkList)
+
+export default TalkListRedux

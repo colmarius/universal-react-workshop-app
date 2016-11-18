@@ -40,7 +40,7 @@ server.route({
   }
 })
 
-// SSR!!!!
+// SSR
 server.route({
   method: 'GET',
   path:'/ssr',

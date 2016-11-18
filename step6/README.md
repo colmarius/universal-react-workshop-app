@@ -39,6 +39,10 @@ proxy: {
   '/ssr': 'http://localhost:4001'
   }
 ```
+- Routing:  aggiungere la route:
+``` javascript
+        <Route path='/ssr' component={TalkList} />
+```
 -  Testare con un browser non-js:
   - lynx http://127.0.0.1:4000/ssr
   - curl http://127.0.0.1:4000/ssr >> test3.html
@@ -130,6 +134,26 @@ del componente al DOM. Se non coincide, allora il browser lo ri-renderizza..
 ## CSS
 We don' use stripper, etc. Just added the bootsetrap CSS sot the SSR rendered page
 is OK.
+
+## React Router histories:
+
+https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md
+For SSR!!!!!
+https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md#creatememoryhistory
+
+
+## SSR Route rendering
+Da: https://www.reddit.com/r/reactjs/comments/3wjttr/fitting_history_reactrouter_and_serverside/
+
+You're running into this problem because when the routes are rendered server side (actually, the components and their props matching the route), the History type you are using does not find any valid DOM. This is pretty much an expected behavior as the server has no DOM, and most History types need one.
+
+To solve this issue, you need to use a specific history type on the server: MemoryHistory. This one does not need a DOM object and won't cause the error.
+
+When creating your history, you could for instance do:
+
+```
+https://github.com/pierreavizou/universal-routed-flux-demo/blob/master/routes/routes.js
+```
 
 ## LINKS:
 - https://medium.com/@firasd/quick-start-tutorial-universal-react-with-server-side-rendering-76fe5363d6e#.q9vofe2od

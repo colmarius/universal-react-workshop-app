@@ -15,9 +15,9 @@ let store
 if (typeof window.__PRELOADED_STATE__ !== 'undefined') {
   store = createStore(reducers, window.__PRELOADED_STATE__, applyMiddleware(thunk))
 } else {
-  // ...no preloaded state...
+  // ...no preloaded state...dispatch the load action!
   store = createStore(reducers, applyMiddleware(thunk))
-  store.dispatch(loadData()) // dispatch the action!
+  store.dispatch(loadData())
 }
 
 render(<Provider store={store}>

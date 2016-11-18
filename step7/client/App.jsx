@@ -7,7 +7,6 @@ import {connect} from 'react-redux'
 import {vote} from './actions'
 
 const mapStateToProps = (state) => {
-  console.log("STATE_TO_PROPS", state)
   return {
     talks: state
   }

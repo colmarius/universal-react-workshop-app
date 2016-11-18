@@ -9,12 +9,11 @@ import TalkList from '../client/TalkList'
 const server = new Hapi.Server()
 server.connection({port: 4001})
 
-const __CLIENT__ = false // for debugging
-
 server.route({
   method: 'GET',
   path: '/api/talks',
   handler: (req, reply) => {
+    console.log('Called GET TALKS"')
     reply(talks)
   }
 })
@@ -24,6 +23,7 @@ server.route({
   path: '/api/talk/{id}',
   handler: (req, reply) => {
     const id = Number(req.params.id)
+    console.log('Called GET TALK WITH ID', id)
     const talk = talks.find(el => el.id === id)
     reply(talk)
   }
@@ -45,7 +45,6 @@ server.route({
   method: 'GET',
   path:'/ssr',
   handler: (request, reply) => {
-    console.log("renderToString(<TalkList initialState={{talks}}/>)", renderToString(<TalkList initialState={{talks}}/>))
     reply(pages.index(renderToString(<TalkList initialState={{talks}}/>), talks))
   }
 })

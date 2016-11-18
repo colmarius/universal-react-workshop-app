@@ -89,3 +89,12 @@ on port 4001 with browser:
 // (TODO)
 ```
 - Test it. Now reloading the browser, the state should remain.
+
+NOTES:
+Putting `console.log` to see React component state change we see:
+- Get InitialState
+- Rendering
+- ComponentDidMount
+- Rendering
+
+This is because `componentDidMount` do a `setState` (which forces rendering)

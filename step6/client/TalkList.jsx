@@ -5,10 +5,8 @@ import axios from 'axios'
 const TalkList = React.createClass({
 
   getInitialState: function () {
-    // We have to change the setup to support SSR.
-    // getInitialState is called on both server and client.
-    // If we have the same state, the component is not rendered.
-    // It's awfutl to use initialStte...but it works
+    console.log("GET_INITIAL_STATE")
+    // We mus setup the state we used to render on server
     if (typeof __PRELOADED_STATE__ !== 'undefined') {
       // Client side
       return {
@@ -22,8 +20,10 @@ const TalkList = React.createClass({
     }
   },
 
-  // Not needed anymore...maitainied onlt for comparing
+  // Not needed anymore...it's only for comparing
   componentDidMount: function () {
+    console.log("COMPONENT_DID_MOUNT")
+
     if (typeof __PRELOADED_STATE__ === 'undefined') {
       axios.get('/api/talks')
         .then(res => {
@@ -41,6 +41,7 @@ const TalkList = React.createClass({
   },
 
   render: function () {
+    console.log("RENDERING")
     const talks = this.state.talks.map(talk => {
       return (
         <Talk

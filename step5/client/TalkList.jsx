@@ -5,12 +5,15 @@ import axios from 'axios'
 const TalkList = React.createClass({
 
   getInitialState: function () {
+    console.log("GET INITIAL STATE")
+
     return {
       talks: [] // initial state
     }
   },
 
   componentDidMount: function () {
+    console.log("COMPONENT DID MOUNT")
     axios.get('/api/talks')
       .then(res => {
         this.setState({talks: res.data})
@@ -26,6 +29,7 @@ const TalkList = React.createClass({
   },
 
   render: function () {
+    console.log("RENDERING...")
 
     // to check where rendering happens
     let inBrowser = false

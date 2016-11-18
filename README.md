@@ -8,11 +8,16 @@ The application is very simple:
 - It's possible to vote each Talk from the Lists
 - It's possible to see the detail for each talk.
 
+We will expose this with client rendering (http://127.0.0.1:4000) and
+SSR (http://127.0.0.1:4000/ssr)
+
 ## Prerequisites
 - nodejs 6.x
 
 ## Instructions
-Every step has is own `README.md`
+Clone the project. Every step is in a "start" state. Just follow
+the step `README.md` to complete the step.
+The completed steps are in `solutions`.
 
 ## Steps
 
@@ -20,16 +25,9 @@ Every step has is own `README.md`
 - **2)** First React component. Hello Workshop!
 - **3)** Webpack setup
 - **4)**: React APP
-  - **4.1**) List structure. CSS
-  - **4.2**) State and props
-  - **4.3**) Routing
-- **5)** HAPI backend. Loading the list and the details from 2 HTTP endpoints.
-- **6)** Server Side Rendering. Loading the state from the server side. Isomorphic rendering
-- **7)** Redux and state management
-
-## TODO
-
-  - PARTIRE DA: https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89#.q9lv29rgv
-    OVVERO: https://github.com/justinjung04/universal-boilerplate
-  - Bootstrap e CSS in SSR
-  - Add step 5/6/7
+  - **4.0**) List structure. CSS with Bootstrap
+  - **4.1**) State and props
+  - **4.2**) Routing
+- **5)** HAPI backend
+- **6)** Server Side Rendering
+- **7)** Same as 6, but with Redux!

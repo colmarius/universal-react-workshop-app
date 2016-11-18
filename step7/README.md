@@ -9,12 +9,22 @@ https://github.com/reactjs/redux/tree/master/examples/universal
 ## How-to
 - Add redux: `npm i redux react-redux redux-thunk --save`
 - Modified index to set the store with Provider and create a store:
-- Add a store:
+- Add a actions and reducers:
+``` javascript
+// (TODO)
+```
+- Change `index,js` to create the store, in two different cases (client / server rendered):
+``` javascript
+// (TODO)
+```
+- Refactor TalkList, removing state / wrapping with redux
+``` javascript
+// (TODO)
+```
 
 ## TODO:
 - Add redux in "client-side"
 - Enable it "server side", see: https://www.codementor.io/reactjs/tutorial/redux-server-rendering-react-router-universal-web-app
-
 
 ## Notes
 

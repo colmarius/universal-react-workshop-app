@@ -57,14 +57,6 @@ e non ri-renderizza la lista perchè già renderizzata
   componentDidMount è chiamato solo sul client.
   getInitialState è chiamato sia sul client che sul server.
 
-Quindi:
-- Il server produce il contunto renderizzato.
-- Il client (react) verifica se deve ri-renderizzare il componente. quindi
-  - riesegue tutto. Ri -renderizza se props & state sono diversi.
-- componentDidMount non serve più: i dati dobbiamo già averli => li prendiamo da un global.
-  (potremmo pure evitare di usare le props)
--
-
 # FURTHER NOTES
 ## Lifecycle
 

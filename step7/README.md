@@ -1,10 +1,7 @@
 # Step 7
 
 ## Description
-Add Redux
-
-https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md
-https://github.com/reactjs/redux/tree/master/examples/universal
+Add Redux, both client side and server side. 
 
 ## How-to
 - Add redux: `npm i redux react-redux redux-thunk --save`

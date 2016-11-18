@@ -4,7 +4,11 @@
 Add first page (TalkList) SSR.
 Note that SSR it's only about rendering the first state page, then JS/react
 starts and then the state is restored. That's the reason we render
-TalkList
+TalkList.
+
+We are going to maitain both behaviour (fro comparison):
+- http://127.0.0.1:4000 -> client side first rendering
+- http://127.0.0.1:4000/ssr -> client side first rendering
 
 ## How-to
 - Add babel hook: npm i babel-register --save

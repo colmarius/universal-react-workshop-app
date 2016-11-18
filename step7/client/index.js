@@ -1,6 +1,26 @@
-import {render} from "react-dom"
-import React from "react"
+import {render} from 'react-dom'
+import React from 'react'
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import App from "./App.jsx"
 
-render(<App/>, document.getElementById("container"))
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware} from 'redux'
+import reducers from './reducers'
+import thunk from 'redux-thunk'
+
+import {loadData} from './actions'
+
+
+let store
+if (typeof window.__PRELOADED_STATE__ !== 'undefined') {
+  store = createStore(reducers, window.__PRELOADED_STATE__, applyMiddleware(thunk))
+} else {
+  // ...no preloaded state...
+  store = createStore(reducers, applyMiddleware(thunk))
+  store.dispatch(loadData()) // dispatch the action!
+}
+
+render(<Provider store={store}>
+         <App />
+       </Provider>,
+  document.getElementById("container"))

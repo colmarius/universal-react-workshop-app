@@ -34,6 +34,7 @@ server.route({
   path: '/api/talk/vote',
   handler: (req, reply) => {
     const id = req.payload.id
+    console.log('ADDING VOTE TO TALK WITH ID', id)
     const talk = talks.find(el => el.id === id)
     talk.votes++
     reply(talks)

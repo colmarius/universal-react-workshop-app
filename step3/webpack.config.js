@@ -7,7 +7,6 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/static/" // path in URL
   },
-
   module: {
     loaders: [{
       test: /(\.js|\.jsx)$/,
@@ -18,6 +17,6 @@ module.exports = {
         presets: [ "es2015", "react", "react-hmre" ]
       }
     }]
-  }
-  
+  },
+  devtool: 'inline-source-map'
 }

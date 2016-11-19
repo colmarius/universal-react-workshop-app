@@ -10,10 +10,15 @@
     "type": "git",
     "url": "https://github.com/marcopiraccini/universal-react-workshop-app"
   },
-  "scripts": {
-    "start": "http-server . -p 3000"
-  },
+  "scripts": {},
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
   }
 }

@@ -30,5 +30,5 @@ The completed steps are in `solutions`.
   - **4.2**) Routing
 - **5)** HAPI backend
 - **6)** Server Side Rendering
-- **7)** Same as 6, but with Redux!
+- **7)** Same as 6, but with redux!
 - **8)** Testing with jest

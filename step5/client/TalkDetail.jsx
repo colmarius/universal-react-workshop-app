@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
 import {Link} from 'react-router'
-import axios from 'axios'
+import data from './data.json'
 
 const TalkDetail = React.createClass({
   getInitialState: function () {
@@ -9,10 +9,9 @@ const TalkDetail = React.createClass({
   },
 
   componentDidMount() {
-    axios.get(`/api/talk/${this.props.params.id}`)
-      .then(res => {
-        this.setState(res.data)
-      })
+    const id = Number(this.props.params.id)
+    const talk = data.find(el => el.id === id)
+    this.setState(talk)
   },
 
   render: function () {

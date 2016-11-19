@@ -36,3 +36,6 @@ The completed steps are in `solutions`.
 - `demo-babel`: Demo of jsx/ES6 transpiling
 - `demo-hapi`: Small HAPI server
 - `demo-webpack`: Webpack demo
+
+## TODO
+- Erro on Talk.jsx -> remoce "detail"

@@ -8,8 +8,8 @@ The application is very simple:
 - It's possible to vote each Talk from the Lists
 - It's possible to see the detail for each talk.
 
-We will expose this with client rendering (http://127.0.0.1:4000) and
-SSR (http://127.0.0.1:4000/ssr)
+Goal: expose this with client rendering (http://127.0.0.1:4000) and
+SSR (http://127.0.0.1:4000/ssr), using first "plain" React and then using Redux
 
 ## Prerequisites
 - nodejs 6.x
@@ -33,9 +33,7 @@ The completed steps are in `solutions`.
 - **8)** Testing with jest
 
 ## Demos
+There are also small a demos:
 - `demo-babel`: Demo of jsx/ES6 transpiling
 - `demo-hapi`: Small HAPI server
 - `demo-webpack`: Webpack demo
-
-## TODO
-- Erro on Talk.jsx -> remoce "detail"

@@ -7,10 +7,6 @@ const Talk = React.createClass({
     this.props.onVote(this.props.id) // we pass back the talk ID
   },
 
-  detail: function () {
-    console.log("detail of", this.props.id)
-  },
-
   render: function () {
     return (
       <div className="list-group-item">

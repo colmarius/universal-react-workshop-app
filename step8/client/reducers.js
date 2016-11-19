@@ -5,7 +5,7 @@
 const reducer = (state = [], action) => {
   switch (action.type) {
     case 'TALKS_UPDATED':
-      return action.talks // In this case we repalce the whole state
+      return action.talks // In this case we replace the whole state
     default:
       return state
   }

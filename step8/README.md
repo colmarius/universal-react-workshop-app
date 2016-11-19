@@ -4,13 +4,14 @@
 Add Test
 
 ## How-to
-- `npm install jest babel-jest react-test-renderer --save-dev`
+- `npm install jest babel-jest react-test-renderer axios-mock-adapter --save-dev`
 - Change test scripts:
 
 ``` javascript
 "scripts": {
   // (...)
-  "test": "jest"
+  "test": "jest",
+  "test:watch": "jest --watch"
 }
 ```
 - `npm test`
@@ -37,8 +38,24 @@ No tests found
 ```
 - Add test to `__test__`. Jest expects to find our tests in a __tests__ folder
 
-- https://www.sitepoint.com/test-react-components-jest/
--
-- TODO: complete!
+- Here the test:
+``` javascript
+// TODO
+```
+- Update snapshot: `npm test -- u`
+
+- Expanding the test with a click:
+``` javascript
+// TODO
+```
+
 Note:
 - https://www.sitepoint.com/test-react-components-jest/
+
+## Enzyme
+Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. Can be used with Jest
+https://github.com/airbnb/enzyme
+
+## Selector API
+They are working on it....
+https://github.com/facebook/jest/issues/1411

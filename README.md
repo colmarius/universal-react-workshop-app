@@ -20,7 +20,6 @@ the step `README.md` to complete the step.
 The completed steps are in `solutions`.
 
 ## Steps
-
 - **1)** Project Setup. Run server and basic structure
 - **2)** First React component. Hello Workshop!
 - **3)** Webpack setup
@@ -32,3 +31,8 @@ The completed steps are in `solutions`.
 - **6)** Server Side Rendering
 - **7)** Same as 6, but with redux!
 - **8)** Testing with jest
+
+## Demos
+- `demo-babel`: Demo of jsx/ES6 transpiling
+- `demo-hapi`: Small HAPI server
+- `demo-webpack`: Webpack demo

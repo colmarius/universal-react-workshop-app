@@ -1,3 +1,5 @@
+import React from 'react' // ES6 import
+
 const App = React.createClass({
     render: function() {
         return (
@@ -8,4 +10,4 @@ const App = React.createClass({
     },
 })
 
-window.App = App // Necessary when not using a bundler
+export default App

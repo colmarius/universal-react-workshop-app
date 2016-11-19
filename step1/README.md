@@ -1,8 +1,8 @@
 # Step 1
 
 ## Description
-Project Setup. Run server and basic structure.
-It's a very simple step, mostly used to check that all is OK.
+- Project Setup. Run server and basic structure.
+- It's a very simple step, mostly used to check that all is OK.
 
 ## How-to
 

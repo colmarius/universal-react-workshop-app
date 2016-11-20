@@ -51,7 +51,6 @@ module.exports = {
   },
 
   devServer: {
-    historyApiFallback: true, // Needed for React Routing
     proxy: {
       '/api': 'http://localhost:4001',
       '/ssr': 'http://localhost:4001'

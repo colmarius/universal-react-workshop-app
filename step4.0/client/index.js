@@ -1,7 +1,10 @@
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 import React from 'react'
-import App from './App.jsx'
+import App from './App'
 
-const containerEl = document.getElementById("container")
+import 'bootstrap/dist/css/bootstrap.css'
 
-render(<App/>, containerEl)
+render(
+  <App />,
+  document.getElementById("container")
+)

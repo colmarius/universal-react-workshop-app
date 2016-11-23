@@ -48,6 +48,11 @@ module.exports = {
       },
       { test: /\.json$/, loader: 'json' }
   ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:4001'
+    }
   }
-
 }

@@ -1,30 +1,35 @@
 import React from 'react'
 import Talk from './Talk.jsx'
-import data from './data.json' // data model
+import axios from 'axios'
 
 const TalkList = React.createClass({
-
   getInitialState: function () {
     return {
-      talks: [] // initial state
+      talks: []
     }
   },
 
   componentDidMount: function () {
-    this.setState({ talks: data })
+    axios.get('/api/talks')
+      .then((res) => {
+        this.setState({ talks: res.data })
+      })
   },
 
   handleVote: function (talkId) {
-    // We "clone" the array. We have to treat this.state as if it were immutable.
-    const updatedTalks = this.state.talks.slice()
-    const votedTalk = updatedTalks.find(el => el.id === talkId)
-    votedTalk.votes++
-    this.setState({ talks: updatedTalks })
+    axios.post('/api/talk/vote', { id: talkId })
+      .then(() => axios.get('/api/talks'))
+      .then(res => {
+        this.setState({
+          talks: res.data
+        })
+      })
   },
 
   render: function () {
-
-    const talks = this.state.talks.map(talk => {
+    const unsortedTalks = this.state.talks.slice()
+    const sortedTalks = unsortedTalks.sort((a, b) => b.votes - a.votes)
+    const talks = sortedTalks.map(talk => {
       return (
         <Talk
           key={'talk-' + talk.id} // used by React

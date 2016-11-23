@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -ex
+
+for dir in `ls -d */`
+do
+  cd $dir && npm i && cd ..
+done

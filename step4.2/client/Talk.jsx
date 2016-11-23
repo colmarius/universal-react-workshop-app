@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import {Button} from 'react-bootstrap'
 
 const Talk = React.createClass({
@@ -9,11 +10,15 @@ const Talk = React.createClass({
   render: function () {
     return (
       <div className="list-group-item">
-          <h3 className="list-group-item-heading">{this.props.name}</h3>
-          <p className="list-group-item-text">{this.props.short}</p>
-          <h4 className="list-group-item-text">by {this.props.author}</h4>
-          <h4 className="list-group-item-text">Number of votes: &nbsp;<span className="badge">{this.props.votes}</span>
-            &nbsp;<Button  onClick={this.vote}>Vote</Button></h4>
+        <Link to={`/detail/${this.props.id}`}>
+          <h3 className="list-group-item-heading">
+            {this.props.name}
+          </h3>
+        </Link>
+        <p className="list-group-item-text">{this.props.short}</p>
+        <h4 className="list-group-item-text">by {this.props.author}</h4>
+        <h4 className="list-group-item-text">Number of votes: &nbsp;<span className="badge">{this.props.votes}</span>
+          &nbsp;<Button  onClick={this.vote}>Vote</Button></h4>
       </div>
   )}
 })

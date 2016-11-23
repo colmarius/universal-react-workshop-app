@@ -52,7 +52,8 @@ module.exports = {
 
   devServer: {
     proxy: {
-      '/api': 'http://localhost:4001'
+      '/api': 'http://localhost:4001',
+      '/ssr': 'http://localhost:4001'
     }
   }
 }

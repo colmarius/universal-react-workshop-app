@@ -5,17 +5,27 @@ import axios from 'axios'
 const TalkList = React.createClass({
 
   getInitialState: function () {
-    return {
-      talks: [] // initial state
+    console.log("GET_INITIAL_STATE")
+    if (typeof __PRELOADED_STATE__ !== 'undefined') {
+      // Client side
+      return {
+        talks:__PRELOADED_STATE__ // initial state
+      }
+    } else {
+      // Server side
+      return {
+        talks: this.props.initialState ? this.props.initialState.talks : []
+      }
     }
   },
 
   componentDidMount: function () {
-    console.log("COMPONENT DID MOUNT")
-    axios.get('/api/talks')
-      .then(res => {
-        this.setState({talks: res.data})
+    if (typeof __PRELOADED_STATE__ === 'undefined') {
+      axios.get('/api/talks')
+        .then(res => {
+          this.setState({talks: res.data})
       })
+    }
   },
 
   handleVote: function (talkId) {
@@ -27,15 +37,6 @@ const TalkList = React.createClass({
   },
 
   render: function () {
-    console.log("RENDERING...")
-
-    // to check where rendering happens
-    let inBrowser = false
-    if (typeof window !== undefined) {
-      inBrowser = true
-    }
-    console.log('In Browser:', inBrowser)
-
     const talks = this.state.talks.map(talk => {
       return (
         <Talk
@@ -49,11 +50,7 @@ const TalkList = React.createClass({
         ></Talk>
       )
     })
-    return (
-      <div className='talks'>
-        {talks}
-      </div>
-    )
+    return (<div>{talks}</div>)
   }
 })
 

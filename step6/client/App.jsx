@@ -8,6 +8,7 @@ const App = React.createClass({
     return (
       <Router history={browserHistory}>
         <Route path='/' component={TalkList} />
+        <Route path='/ssr' component={TalkList} />
         <Route path='/detail/:id' component={TalkDetail} />
         <Route path='*' component={NotFound} />
       </Router>

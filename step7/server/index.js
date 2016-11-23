@@ -6,6 +6,10 @@ import React from 'react'
 import {renderToString, renderToStaticMarkup} from 'react-dom/server'
 import TalkList from '../client/TalkList'
 
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import reducers from '../client/reducers'
+
 const server = new Hapi.Server()
 server.connection({port: 4001})
 
@@ -34,18 +38,24 @@ server.route({
   path: '/api/talk/vote',
   handler: (req, reply) => {
     const id = req.payload.id
+    console.log('ADDING VOTE TO TALK WITH ID', id)
     const talk = talks.find(el => el.id === id)
     talk.votes++
     reply(talks)
   }
 })
 
-// SSR
+// SSR!!!!
 server.route({
   method: 'GET',
   path:'/ssr',
   handler: (request, reply) => {
-    reply(pages.index(renderToString(<TalkList initialState={{talks}}/>), talks))
+    const store = createStore(reducers, talks)
+    const comp = renderToString(
+       <Provider store={store}>
+          <TalkList/>
+       </Provider>)
+    reply(pages.index(comp, talks))
   }
 })
 

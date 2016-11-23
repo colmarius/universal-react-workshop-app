@@ -21,7 +21,9 @@ const TalkList = React.createClass({
   },
 
   render: function () {
-    const talks = this.state.talks.map(talk => {
+    const unsortedTalks = this.state.talks.slice()
+    const sortedTalks = unsortedTalks.sort((a, b) => b.votes - a.votes)
+    const talks = sortedTalks.map(talk => {
       const { id, name, author, short, votes } = talk
       return (
         <Talk
